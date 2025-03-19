@@ -24,7 +24,7 @@ public:
     pinMode(_collision_pins[1], OUTPUT);
   }
 
-  void loop(float current_millis)
+  void loop(unsigned long current_millis)
   {
     if(_strobe_enabled)
       strobe_loop(current_millis);
