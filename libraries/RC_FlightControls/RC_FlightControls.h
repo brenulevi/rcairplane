@@ -9,7 +9,16 @@ public:
   RC_FlightControls(unsigned int* ailerons_pins, unsigned int elevator_pin, unsigned int rudder_pin);
 
   void setup();
-  void loop(unsigned long current_millis);
+  
+  void move_left_aileron(unsigned int degrees);
+  void move_right_aileron(unsigned int degrees);
+  void move_elevator(unsigned int degrees);
+  void move_rudder(unsigned int degrees);
+
+  unsigned int get_left_aileron_position();
+  unsigned int get_right_aileron_position();
+  unsigned int get_elevator_position();
+  unsigned int get_rudder_position();
 
 private:
   unsigned int* _ailerons_pins;
@@ -20,8 +29,4 @@ private:
   Servo _right_aileron;
   Servo _elevator;
   Servo _rudder;
-
-  //temp
-  unsigned long _last_millis = 0;
-  bool _state = false;
 };

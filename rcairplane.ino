@@ -10,6 +10,9 @@ RC_Lighting lighting(strobe_pins, 10, 11, collision_pins);
 
 void setup() {
 
+  Serial.begin(9600);
+  Serial.println("Starting aircraft...");
+
   flight_controls.setup();
 
   lighting.setup();
@@ -21,6 +24,7 @@ void setup() {
 void loop() {
   unsigned long current_millis = millis();
 
-  flight_controls.loop(current_millis);
+  flight_controls.move_left_aileron(map(analogRead(A0), 0, 1023, 0, 180));
+  
   lighting.loop(current_millis);
 }
