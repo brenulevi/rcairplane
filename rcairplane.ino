@@ -1,17 +1,32 @@
+#include <RC_Radio.h>
 #include <RC_FlightControls.h>
 #include <RC_Lighting.h>
+#include <printf.h>
 
-unsigned int ailerons_pins[2] = { 4, 5 };
-RC_FlightControls flight_controls(ailerons_pins, 6, 7);
+enum AircraftState
+{
+  GROUND,
+  AIR_MANUAL,
+  AIR_AUTOPILOT
+};
 
-unsigned int strobe_pins[2] = { 8, 9 };
-unsigned int collision_pins[2] = { 12, 13 };
-RC_Lighting lighting(strobe_pins, 10, 11, collision_pins);
+AircraftState state = GROUND;
+
+RC_Radio radio_control(7, 8);
+
+unsigned int ailerons_pins[2] = { 22, 23 };
+RC_FlightControls flight_controls(ailerons_pins, 24, 25);
+
+unsigned int strobe_pins[2] = { 26, 27 };
+unsigned int collision_pins[2] = { 30, 31 };
+RC_Lighting lighting(strobe_pins, 28, 29, collision_pins);
 
 void setup() {
-
   Serial.begin(9600);
+  printf_begin();
   Serial.println("Starting aircraft...");
+
+  radio_control.setup();
 
   flight_controls.setup();
 
@@ -24,7 +39,9 @@ void setup() {
 void loop() {
   unsigned long current_millis = millis();
 
-  flight_controls.move_left_aileron(map(analogRead(A0), 0, 1023, 0, 180));
+  radio_control.peek();
+
+  // RC_Data& radio_control_data = radio_control.get_data();
   
   lighting.loop(current_millis);
 }
