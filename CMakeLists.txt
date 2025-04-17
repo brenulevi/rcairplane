@@ -7,6 +7,10 @@ add_executable(plane
     src/plane/main.cpp
 )
 
+target_include_directories(plane PUBLIC
+    ${CMAKE_SOURCE_DIR}/src
+)
+
 target_link_libraries(plane
     pthread
     rt
@@ -17,7 +21,6 @@ target_link_libraries(plane
 add_executable(control
     src/control/main.cpp
 )
-
 
 target_link_libraries(control
     pthread
