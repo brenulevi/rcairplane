@@ -4,7 +4,8 @@ project(rcairplane)
 set(CMAKE_CXX_STANDARD 17)
 
 add_executable(plane
-    src/plane/main.cpp
+    src/main.cpp
+    src/gpio.cpp
 )
 
 target_include_directories(plane PUBLIC
@@ -14,17 +15,6 @@ target_include_directories(plane PUBLIC
 target_link_libraries(plane
     pthread
     rt
-    pigpio
-    rf24
-)
-
-add_executable(control
-    src/control/main.cpp
-)
-
-target_link_libraries(control
-    pthread
-    rt
-    pigpio
+    pigpiod_if2
     rf24
 )
