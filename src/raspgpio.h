@@ -11,13 +11,15 @@
  * This class uses PIGPIO Daemon as interface to communication with GPIO Hardware.
  * Call init() to begin using and terminate with shutdown()
  */
-class GPIO
+class RASPGPIO
 {
 private:
-    GPIO();
+    RASPGPIO();
 public:
-    static void init();
+    static int init();
     static void shutdown();
+
+    static void printDetails();
 
     static void setPinMode(unsigned int pin, unsigned int mode);
 

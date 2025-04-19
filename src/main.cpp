@@ -1,7 +1,11 @@
 #include <iostream>
-#include <gpio.h>
+#include "raspgpio.h"
 #include <chrono>
 #include <csignal>
+
+#include <RF24/RF24.h>
+
+#include "i2c/i2cbus.h"
 
 bool isRunning = true;
 
@@ -15,9 +19,10 @@ int main()
 {
     std::cout << "Hello, Plane!" << std::endl;
 
-    GPIO::init();
+    RASPGPIO::init();
+    I2CBus::init();
 
-    GPIO::setPinMode(17, GPIO_PIN_OUTPUT);
+    RASPGPIO::setPinMode(17, GPIO_PIN_OUTPUT);
 
     unsigned long lastTime = 0;
     bool turnOn = true;
@@ -25,29 +30,30 @@ int main()
     {
         signal(SIGINT, shutdown);
 
-        if(GPIO::getTime() - lastTime > 2000000 && turnOn)
+        if(RASPGPIO::getTime() - lastTime > 2000000 && turnOn)
         {
-            GPIO::writeDigitalPin(17, 1);
-            GPIO::writePWMServoPin(27, 500);
-            GPIO::writePWMServoPin(22, 500);
-            lastTime = GPIO::getTime();
+            RASPGPIO::writeDigitalPin(17, 1);
+            RASPGPIO::writePWMServoPin(27, 500);
+            RASPGPIO::writePWMServoPin(22, 500);
+            lastTime = RASPGPIO::getTime();
             turnOn = false;
         }
-        else if (GPIO::getTime() - lastTime > 2000000 && !turnOn)
+        else if (RASPGPIO::getTime() - lastTime > 2000000 && !turnOn)
         {
-            GPIO::writeDigitalPin(17, 0);
-            GPIO::writePWMServoPin(27, 2000);
-            GPIO::writePWMServoPin(22, 2500);
-            lastTime = GPIO::getTime();
+            RASPGPIO::writeDigitalPin(17, 0);
+            RASPGPIO::writePWMServoPin(27, 2000);
+            RASPGPIO::writePWMServoPin(22, 2500);
+            lastTime = RASPGPIO::getTime();
             turnOn = true;
         }
 
     }
 
-    GPIO::writePWMServoPin(27, 1500);
-    GPIO::writePWMServoPin(22, 1500);
+    RASPGPIO::writePWMServoPin(27, 1500);
+    RASPGPIO::writePWMServoPin(22, 1500);
 
-    GPIO::shutdown();
+    I2CBus::shutdown();
+    RASPGPIO::shutdown();
 
     return 0;
 }

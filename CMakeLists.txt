@@ -5,7 +5,14 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable(plane
     src/main.cpp
-    src/gpio.cpp
+    src/raspgpio.cpp
+    
+    src/i2c/i2cbus.cpp
+    src/i2c/i2cdevice.cpp
+
+    src/modules/ads1115.cpp
+
+    src/utils.cpp
 )
 
 target_include_directories(plane PUBLIC
