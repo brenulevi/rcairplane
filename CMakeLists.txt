@@ -5,7 +5,8 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable(plane
     src/main.cpp
-    src/raspgpio.cpp
+
+    src/gpio/raspgpio.cpp
     
     src/i2c/i2cbus.cpp
     src/i2c/i2cdevice.cpp
@@ -13,13 +14,18 @@ add_executable(plane
     src/modules/ads1115.cpp
     src/modules/servo.cpp
 
-    src/plane/rcplane.cpp
+    src/plane/plane.cpp
+    src/plane/lighting.cpp
 
-    src/utils.cpp
+    src/utils/utils.cpp
 )
 
-target_include_directories(plane PUBLIC
+target_include_directories(plane PRIVATE
     ${CMAKE_SOURCE_DIR}/src
+)
+
+target_precompile_headers(plane PRIVATE
+    ${CMAKE_SOURCE_DIR}/src/pch.h
 )
 
 target_link_libraries(plane

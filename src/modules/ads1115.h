@@ -1,7 +1,5 @@
 #pragma once
 
-#include <cstdint>
-
 #include "i2c/i2cdevice.h"
 
 #define ADS1115_CONVERSION_REGISTER         0b00

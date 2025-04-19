@@ -1,13 +1,11 @@
 #pragma once
 
-#include <cstdint>
-
 #include "i2cdevice.h"
 
 class I2CBus
 {
 private:
-    I2CBus();
+    I2CBus() = default;
 
 public:
     static int init();

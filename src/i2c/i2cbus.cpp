@@ -1,21 +1,10 @@
+#include <pch.h>
 #include "i2cbus.h"
 
-#include <iostream>
-#include <linux/i2c-dev.h>
-#include <sys/ioctl.h>
-#include <unistd.h>
-#include <cstdint>
-#include <fcntl.h>
-
-#include <utils.h>
+#include "utils/utils.h"
 
 int I2CBus::m_bus;
 I2CDevice* I2CBus::m_currentDevice = nullptr;
-
-I2CBus::I2CBus()
-{
-    std::cerr << "This is a static class (singleton) use the static methods!!!\n";
-}
 
 int I2CBus::init()
 {

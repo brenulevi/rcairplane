@@ -4,8 +4,11 @@
 
 #define CHECK(x) {int error = x; if(error != 0) printError(error, __FILE__, __LINE__); }
 
-#define GPIO_PIN_INPUT PI_INPUT
-#define GPIO_PIN_OUTPUT PI_OUTPUT
+#define RASPGPIO_PIN_INPUT PI_INPUT
+#define RASPGPIO_PIN_OUTPUT PI_OUTPUT
+
+#define RASPGPIO_PIN_HIGH 1
+#define RASPGPIO_PIN_LOW 0
 
 /**
  * This class uses PIGPIO Daemon as interface to communication with GPIO Hardware.
@@ -14,7 +17,7 @@
 class RASPGPIO
 {
 private:
-    RASPGPIO();
+    RASPGPIO() = default;
 public:
     static int init();
     static void shutdown();
@@ -29,7 +32,10 @@ public:
     static unsigned int readPWMServoPin(unsigned int pin);
     static void writePWMServoPin(unsigned int pin, unsigned int value);
 
-    static unsigned long getTime();
+    /**
+     * Get time in microseconds since pigpio daemon was initialized has a resolution of 2^32 so it wraps around after 72 minutes
+     */
+    static uint32_t getTime();
 
 private:
     static void printError(int error, const char* file, int line);

@@ -1,13 +1,7 @@
+#include <pch.h>
 #include "raspgpio.h"
 
-#include <iostream>
-
 int RASPGPIO::m_instance = 0;
-
-RASPGPIO::RASPGPIO()
-{
-    std::cerr << "This is a static class (singleton) use the static methods!!!\n";
-}
 
 int RASPGPIO::init()
 {
@@ -58,7 +52,7 @@ void RASPGPIO::writePWMServoPin(unsigned int pin, unsigned int value)
     CHECK(set_servo_pulsewidth(m_instance, pin, value));
 }
 
-unsigned long RASPGPIO::getTime()
+uint32_t RASPGPIO::getTime()
 {
     return get_current_tick(m_instance);
 }

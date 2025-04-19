@@ -1,7 +1,5 @@
 #pragma once
 
-#include <cstdint>
-
 struct I2CDevice
 {
     uint8_t address;

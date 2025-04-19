@@ -1,8 +1,9 @@
+#include <pch.h>
 #include "servo.h"
 
 #include <iostream>
 
-#include "raspgpio.h"
+#include "gpio/raspgpio.h"
 
 Servo::Servo(uint8_t pin)
     : m_pin(pin), m_rangeMin(500), m_rangeMax(2500)

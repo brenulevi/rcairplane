@@ -1,14 +1,9 @@
-#include <iostream>
-#include <chrono>
-#include <csignal>
+#include <pch.h>
 
-#include <RF24/RF24.h>
-
-#include "raspgpio.h"
+#include "gpio/raspgpio.h"
 #include "i2c/i2cbus.h"
+#include "plane/plane.h"
 #include "modules/ads1115.h"
-#include "plane/rcplane.h"
-#include "modules/servo.h"
 
 bool isRunning = true;
 
@@ -24,54 +19,20 @@ int main()
 
     RASPGPIO::init();
     I2CBus::init();
+    Plane::init();
 
-    ADS1115 ads1115(0b1001000);
-    ads1115.startConversion();
+    RASPGPIO::printDetails();
 
-    usleep(10000);
-
-    uint16_t value = ads1115.readValue();
-
-    Servo servo1(27);
-    Servo servo2(22);
-
-    RASPGPIO::setPinMode(17, GPIO_PIN_OUTPUT);
-
-    RCPlane::init();
-
-    unsigned long lastTime = 0;
-    bool turnOn = true;
     while(isRunning)
     {
         signal(SIGINT, shutdown);
 
-        if(RASPGPIO::getTime() - lastTime > 2000000 && turnOn)
-        {
-            RASPGPIO::writeDigitalPin(17, 1);
-            servo1.moveDegrees(0);
-            servo2.movePulseWidth(500);
-            lastTime = RASPGPIO::getTime();
-            turnOn = false;
-        }
-        else if (RASPGPIO::getTime() - lastTime > 2000000 && !turnOn)
-        {
-            RASPGPIO::writeDigitalPin(17, 0);
+        uint32_t current_time = RASPGPIO::getTime();
 
-            servo1.moveDegrees(180);
-            servo2.movePulseWidth(2500);
-
-            lastTime = RASPGPIO::getTime();
-            turnOn = true;
-        }
-
-        RCPlane::tick();
+        Plane::tick(current_time);
     }
 
-    RCPlane::shutdown();
-
-    servo1.moveDegrees(90);
-    servo2.movePulseWidth(1500);
-
+    Plane::shutdown();
     I2CBus::shutdown();
     RASPGPIO::shutdown();
 
