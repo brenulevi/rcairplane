@@ -11,6 +11,9 @@ add_executable(plane
     src/i2c/i2cdevice.cpp
 
     src/modules/ads1115.cpp
+    src/modules/servo.cpp
+
+    src/plane/rcplane.cpp
 
     src/utils.cpp
 )
