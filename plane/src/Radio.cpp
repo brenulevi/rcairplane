@@ -15,7 +15,16 @@ void Radio::setup()
     m_rf24.setPALevel(RF24_PA_HIGH);
     m_rf24.setDataRate(RF24_250KBPS);
     m_rf24.setChannel(RADIO_CHANNEL);
+    m_rf24.setCRCLength(RF24_CRC_16);
 
     m_rf24.openReadingPipe(0, RADIO_ADDRESS);
     m_rf24.startListening();
+}
+
+void Radio::peek()
+{
+    if(m_rf24.available())
+    {
+        m_rf24.read(&m_data, sizeof(Packet));
+    }
 }

@@ -27,7 +27,8 @@ void setup()
 
     // start engine and calibrate
     engine.setup();
-    engine.startCalibration();
+    engine.calibrate();
+    engine.turnOn();
   }
   catch (const std::exception &e)
   {
@@ -43,13 +44,22 @@ void loop()
   if (!isRunning)
     return;
 
-  // initialization was successfull
+  // fill packet with data received
+  radio.peek();
 
-  if (!engine.isCalibrated())
-  {
-    engine.tickCalibration(currentMillis);
-    return;
-  }
+  // get packet and treat data
+  auto& radioData = radio.getData();
 
-  // engine calibrated
+  // map data from 0/255 to -1.0/1.0  (I dont know if I'll maintain 0/255 because of precision)
+  float aileronMovement = (radioData.joy1_x / (255.0f / 2.0f)) - 1.0f;
+  float elevatorMovement = (radioData.joy1_y / (255.0f / 2.0f)) - 1.0f;
+  float rudderMovement = (radioData.joy2_x / (255.0f / 2.0f)) - 1.0f;
+
+  float throttle = (radioData.pot / 255.0f);
+
+  flightControls.setAileron(aileronMovement);
+  flightControls.setElevator(elevatorMovement);
+  flightControls.setRudder(rudderMovement);
+
+  engine.setThrottle(throttle);
 }
