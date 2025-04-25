@@ -249,7 +249,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "plane.kicad_pro",
+    "filename": "control.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -407,11 +407,6 @@
     "subpart_first_id": 65,
     "subpart_id_separator": 0
   },
-  "sheets": [
-    [
-      "8dfaeffa-e22f-4849-a554-6a54b7fa5ece",
-      "Root"
-    ]
-  ],
+  "sheets": [],
   "text_variables": {}
 }
