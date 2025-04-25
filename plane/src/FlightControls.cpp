@@ -9,14 +9,13 @@ FlightControls::FlightControls(uint8_t aileronPin, uint8_t elevatorPin, uint8_t 
 
 void FlightControls::setup()
 {
-    if (!m_aileron.attach(m_aileronPin))
-        throw std::runtime_error("Aileron servos error to attach pin");
+    m_aileron.setPeriodHertz(50);
+    m_elevator.setPeriodHertz(50);
+    m_rudder.setPeriodHertz(50);
 
-    if (!m_elevator.attach(m_elevatorPin))
-        throw std::runtime_error("Elevator servo error to attach pin");
-
-    if (!m_rudder.attach(m_rudderPin))
-        throw std::runtime_error("Rudder servo error to attach pin");
+    m_aileron.attach(m_aileronPin, 500, 2400);
+    m_elevator.attach(m_elevatorPin, 500, 2400);
+    m_rudder.attach(m_rudderPin, 500, 2400);
 }
 
 void FlightControls::resetSurfaces()

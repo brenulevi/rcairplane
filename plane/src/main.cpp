@@ -3,22 +3,24 @@
 #include "Radio.h"
 #include "Engine.h"
 #include "FlightControls.h"
+#include "Lighting.h"
 
-Radio radio(0, 0);
-FlightControls flightControls(0, 0, 0);
-Engine engine(0);
+Radio radio(17, 5);
+FlightControls flightControls(14, 12, 13);
+Engine engine(27);
+Lighting lighting(26, 25);
 
 bool isRunning = true;
 
 void setup()
 {
   Serial.begin(115200);
-
+  
   Serial.println("Setting up plane...");
   
   try
   {
-    // start and configure radio
+    // start radio
     radio.setup();
 
     // start flight controls and reset surface position
@@ -29,6 +31,11 @@ void setup()
     engine.setup();
     engine.calibrate();
     engine.turnOn();
+
+    // start lights
+    lighting.setup();
+    lighting.setNav(true);
+    lighting.setStrobe(true);
   }
   catch (const std::exception &e)
   {
@@ -44,6 +51,9 @@ void loop()
   if (!isRunning)
     return;
 
+  // update lights
+  lighting.tick(currentMillis);
+
   // fill packet with data received
   radio.peek();
 
@@ -55,6 +65,7 @@ void loop()
   float elevatorMovement = (radioData.joy1_y / (255.0f / 2.0f)) - 1.0f;
   float rudderMovement = (radioData.joy2_x / (255.0f / 2.0f)) - 1.0f;
 
+  // map pot data to throttle between 0.0 and 1.0
   float throttle = (radioData.pot / 255.0f);
 
   flightControls.setAileron(aileronMovement);
