@@ -9,8 +9,7 @@ Engine::Engine(uint8_t pin)
 
 void Engine::setup()
 {
-    if (!m_servo.attach(m_pin))
-        throw std::runtime_error("Engine servo error to attach pin");
+    m_servo.attach(m_pin);
 }
 
 void Engine::setThrottle(float value)

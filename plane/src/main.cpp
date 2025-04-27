@@ -15,33 +15,25 @@ bool isRunning = true;
 void setup()
 {
   Serial.begin(115200);
-  
+
   Serial.println("Setting up plane...");
-  
-  try
-  {
-    // start radio
-    radio.setup();
 
-    // start flight controls and reset surface position
-    flightControls.setup();
-    flightControls.resetSurfaces();
+  // start radio
+  radio.setup();
 
-    // start engine and calibrate
-    engine.setup();
-    engine.calibrate();
-    engine.turnOn();
+  // start flight controls and reset surface position
+  flightControls.setup();
+  flightControls.resetSurfaces();
 
-    // start lights
-    lighting.setup();
-    lighting.setNav(true);
-    lighting.setStrobe(true);
-  }
-  catch (const std::exception &e)
-  {
-    Serial.println(e.what());
-    isRunning = false;
-  }
+  // start engine and calibrate
+  engine.setup();
+  engine.calibrate();
+  engine.turnOn();
+
+  // start lights
+  lighting.setup();
+  lighting.setNav(true);
+  lighting.setStrobe(true);
 }
 
 void loop()
@@ -58,7 +50,7 @@ void loop()
   radio.peek();
 
   // get packet and treat data
-  auto& radioData = radio.getData();
+  auto &radioData = radio.getData();
 
   // map data from 0/255 to -1.0/1.0  (I dont know if I'll maintain 0/255 because of precision)
   float aileronMovement = (radioData.joy1_x / (255.0f / 2.0f)) - 1.0f;
