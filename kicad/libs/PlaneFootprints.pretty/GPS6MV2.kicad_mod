@@ -131,6 +131,17 @@
 		(layer "F.SilkS")
 		(uuid "6121ae6f-ea48-4364-ac76-5d5714520034")
 	)
+	(fp_rect
+		(start -13 -18)
+		(end 13 -14.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "83dda984-28cb-47c5-9171-15c78ef41659")
+	)
 	(fp_text user "Antenna"
 		(at -0.5 16 0)
 		(unlocked yes)

@@ -6789,7 +6789,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "PlaneFootprints:14AWG_Wire"
 			(at 43.18 36.83 0)
 			(effects
 				(font
@@ -7193,7 +7193,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "PlaneFootprints:ESC"
 			(at 106.68 35.56 0)
 			(effects
 				(font
