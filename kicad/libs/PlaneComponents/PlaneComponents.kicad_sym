@@ -307,7 +307,7 @@
 			)
 		)
 		(symbol "ESC_1_1"
-			(pin input line
+			(pin power_in line
 				(at -7.62 1.27 0)
 				(length 2.54)
 				(name "+"
@@ -325,7 +325,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin power_in line
 				(at -7.62 -1.27 0)
 				(length 2.54)
 				(name "-"
@@ -343,7 +343,7 @@
 					)
 				)
 			)
-			(pin output line
+			(pin power_out line
 				(at 7.62 2.54 180)
 				(length 2.54)
 				(name "5V"
@@ -361,7 +361,7 @@
 					)
 				)
 			)
-			(pin output line
+			(pin power_out line
 				(at 7.62 0 180)
 				(length 2.54)
 				(name "GND"
@@ -516,7 +516,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin bidirectional line
 				(at -8.89 10.16 0)
 				(length 2.54)
 				(name "D34"
@@ -534,7 +534,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin bidirectional line
 				(at -8.89 7.62 0)
 				(length 2.54)
 				(name "D35"
@@ -552,7 +552,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin bidirectional line
 				(at -8.89 5.08 0)
 				(length 2.54)
 				(name "D32"
@@ -570,7 +570,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin bidirectional line
 				(at -8.89 2.54 0)
 				(length 2.54)
 				(name "D33"
@@ -588,7 +588,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin bidirectional line
 				(at -8.89 0 0)
 				(length 2.54)
 				(name "D25"
@@ -606,7 +606,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin bidirectional line
 				(at -8.89 -2.54 0)
 				(length 2.54)
 				(name "D26"
@@ -624,7 +624,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin bidirectional line
 				(at -8.89 -5.08 0)
 				(length 2.54)
 				(name "D27"
@@ -642,7 +642,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin bidirectional line
 				(at -8.89 -7.62 0)
 				(length 2.54)
 				(name "D14"
@@ -660,7 +660,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin bidirectional line
 				(at -8.89 -10.16 0)
 				(length 2.54)
 				(name "D12"
@@ -678,7 +678,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin bidirectional line
 				(at -8.89 -12.7 0)
 				(length 2.54)
 				(name "D13"
@@ -696,7 +696,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin power_in line
 				(at -8.89 -15.24 0)
 				(length 2.54)
 				(name "GND"
@@ -714,7 +714,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin power_in line
 				(at -8.89 -17.78 0)
 				(length 2.54)
 				(name "VIN"
@@ -732,7 +732,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin bidirectional line
 				(at 8.89 17.78 180)
 				(length 2.54)
 				(name "D23"
@@ -750,7 +750,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin bidirectional line
 				(at 8.89 15.24 180)
 				(length 2.54)
 				(name "D22"
@@ -768,7 +768,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin bidirectional line
 				(at 8.89 12.7 180)
 				(length 2.54)
 				(name "TX0"
@@ -786,7 +786,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin bidirectional line
 				(at 8.89 10.16 180)
 				(length 2.54)
 				(name "RX0"
@@ -804,7 +804,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin bidirectional line
 				(at 8.89 7.62 180)
 				(length 2.54)
 				(name "D21"
@@ -822,7 +822,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin bidirectional line
 				(at 8.89 5.08 180)
 				(length 2.54)
 				(name "D19"
@@ -840,7 +840,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin bidirectional line
 				(at 8.89 2.54 180)
 				(length 2.54)
 				(name "D18"
@@ -858,7 +858,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin bidirectional line
 				(at 8.89 0 180)
 				(length 2.54)
 				(name "D5"
@@ -876,7 +876,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin bidirectional line
 				(at 8.89 -2.54 180)
 				(length 2.54)
 				(name "TX2"
@@ -894,7 +894,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin bidirectional line
 				(at 8.89 -5.08 180)
 				(length 2.54)
 				(name "RX2"
@@ -912,7 +912,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin bidirectional line
 				(at 8.89 -7.62 180)
 				(length 2.54)
 				(name "D4"
@@ -930,7 +930,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin bidirectional line
 				(at 8.89 -10.16 180)
 				(length 2.54)
 				(name "D2"
@@ -948,7 +948,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin bidirectional line
 				(at 8.89 -12.7 180)
 				(length 2.54)
 				(name "D15"
@@ -966,7 +966,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin power_out line
 				(at 8.89 -15.24 180)
 				(length 2.54)
 				(name "GND"
@@ -984,7 +984,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin power_out line
 				(at 8.89 -17.78 180)
 				(length 2.54)
 				(name "3V3"
@@ -1741,7 +1741,7 @@
 			)
 		)
 		(symbol "LD1085V50_1_1"
-			(pin input line
+			(pin power_in line
 				(at 6.35 2.54 180)
 				(length 2.54)
 				(name "VIN"
@@ -1759,7 +1759,7 @@
 					)
 				)
 			)
-			(pin output line
+			(pin power_out line
 				(at 6.35 0 180)
 				(length 2.54)
 				(name "VOUT"
@@ -1777,7 +1777,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin power_in line
 				(at 6.35 -2.54 180)
 				(length 2.54)
 				(name "GND"
@@ -1896,7 +1896,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin bidirectional line
 				(at 8.89 6.35 180)
 				(length 2.54)
 				(name "CE"
@@ -1914,7 +1914,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin bidirectional line
 				(at 8.89 3.81 180)
 				(length 2.54)
 				(name "CSN"
@@ -1932,7 +1932,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin bidirectional line
 				(at 8.89 1.27 180)
 				(length 2.54)
 				(name "SCK"
@@ -1950,7 +1950,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin bidirectional line
 				(at 8.89 -1.27 180)
 				(length 2.54)
 				(name "MOSI"
@@ -1968,7 +1968,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin bidirectional line
 				(at 8.89 -3.81 180)
 				(length 2.54)
 				(name "MISO"
