@@ -4,7 +4,7 @@
 	(generator_version "9.0")
 	(layer "F.Cu")
 	(property "Reference" "REF**"
-		(at 0 1.5 0)
+		(at 0.5 2.5 0)
 		(unlocked yes)
 		(layer "F.SilkS")
 		(uuid "ecf70923-c0b6-472d-804b-745071b4fa66")
@@ -16,7 +16,7 @@
 		)
 	)
 	(property "Value" "LED"
-		(at 0 -5.5 0)
+		(at 0 -3.5 0)
 		(unlocked yes)
 		(layer "F.Fab")
 		(uuid "3a53f129-9909-4eaa-9bde-a4e94456098d")
@@ -55,8 +55,8 @@
 	)
 	(attr through_hole)
 	(fp_rect
-		(start -4 -3)
-		(end 4 3)
+		(start -4 -1)
+		(end 4 1)
 		(stroke
 			(width 0.1)
 			(type default)
@@ -66,8 +66,8 @@
 		(uuid "3ef56dd3-757f-4182-8f45-9ee3fb317b1f")
 	)
 	(fp_rect
-		(start -4.5 -3.5)
-		(end 4.5 0)
+		(start -4.5 -1.5)
+		(end 4.5 1.5)
 		(stroke
 			(width 0.05)
 			(type default)
@@ -77,7 +77,7 @@
 		(uuid "4c0f7593-1048-4229-bf85-8614acd0501d")
 	)
 	(fp_text user "+"
-		(at -2 0 0)
+		(at -3.5 0 0)
 		(unlocked yes)
 		(layer "F.SilkS")
 		(uuid "13495a25-34f3-4cde-abfd-1e6d6968cd22")
@@ -89,7 +89,7 @@
 		)
 	)
 	(fp_text user "-"
-		(at 2 0 0)
+		(at 3.5 0 0)
 		(unlocked yes)
 		(layer "F.SilkS")
 		(uuid "a106df6b-c079-4b48-a34a-2db57bbaadf9")
@@ -101,7 +101,7 @@
 		)
 	)
 	(fp_text user "${REFERENCE}"
-		(at 0 -4 0)
+		(at 0 -2 0)
 		(unlocked yes)
 		(layer "F.Fab")
 		(uuid "5fb28dfc-7a65-42f4-b19f-eaa9df1ec1f3")
@@ -113,20 +113,20 @@
 		)
 	)
 	(pad "1" thru_hole circle
-		(at -2 -1.5)
-		(size 1.5 1.5)
-		(drill 0.8)
-		(layers "*.Cu" "*.Mask")
-		(remove_unused_layers no)
-		(uuid "fd929f87-5f87-4d80-9b6b-5b279fec9816")
-	)
-	(pad "2" thru_hole circle
-		(at 2 -1.5)
+		(at 2 0)
 		(size 1.5 1.5)
 		(drill 0.8)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(uuid "5cdb9f11-11f2-4e73-958e-04c5d08066b4")
+	)
+	(pad "2" thru_hole circle
+		(at -2 0)
+		(size 1.5 1.5)
+		(drill 0.8)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "fd929f87-5f87-4d80-9b6b-5b279fec9816")
 	)
 	(embedded_fonts no)
 )

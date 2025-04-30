@@ -99,7 +99,7 @@
 		(uuid "c968baeb-f23c-445f-9f90-fbfa7a4fd70a")
 	)
 	(fp_rect
-		(start 5.75 -7)
+		(start -10.25 -7)
 		(end 8.75 7)
 		(stroke
 			(width 0.05)

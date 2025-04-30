@@ -307,42 +307,6 @@
 			)
 		)
 		(symbol "ESC_1_1"
-			(pin power_in line
-				(at -7.62 1.27 0)
-				(length 2.54)
-				(name "+"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "1"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin power_in line
-				(at -7.62 -1.27 0)
-				(length 2.54)
-				(name "-"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "2"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
 			(pin power_out line
 				(at 7.62 2.54 180)
 				(length 2.54)
@@ -353,7 +317,7 @@
 						)
 					)
 				)
-				(number "3"
+				(number "1"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -371,7 +335,7 @@
 						)
 					)
 				)
-				(number "4"
+				(number "2"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -382,7 +346,7 @@
 			(pin input line
 				(at 7.62 -2.54 180)
 				(length 2.54)
-				(name "PWM"
+				(name "3"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -1896,7 +1860,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin bidirectional line
 				(at 8.89 6.35 180)
 				(length 2.54)
 				(name "CE"
@@ -1914,7 +1878,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin bidirectional line
 				(at 8.89 3.81 180)
 				(length 2.54)
 				(name "CSN"
@@ -1932,7 +1896,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin bidirectional line
 				(at 8.89 1.27 180)
 				(length 2.54)
 				(name "SCK"
@@ -1950,7 +1914,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin bidirectional line
 				(at 8.89 -1.27 180)
 				(length 2.54)
 				(name "MOSI"
@@ -1968,7 +1932,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin bidirectional line
 				(at 8.89 -3.81 180)
 				(length 2.54)
 				(name "MISO"

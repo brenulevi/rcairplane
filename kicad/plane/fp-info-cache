@@ -1,4 +1,4 @@
-25241994993417462
+25240249577491379
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -87884,13 +87884,6 @@ BMP280
 0
 6
 6
-PlaneFootprints
-ESC
-
-
-0
-5
-5
 PlaneFootprints
 ESP32_DevKit_C
 
