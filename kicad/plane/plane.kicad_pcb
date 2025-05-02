@@ -8216,7 +8216,7 @@
 				)
 			)
 		)
-		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+		(property "Description" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -8243,7 +8243,7 @@
 			)
 			(fill no)
 			(layer "F.SilkS")
-			(uuid "f980195c-eeed-4851-ba8b-040632373047")
+			(uuid "d6312da2-0649-413f-b381-7860d54aea81")
 		)
 		(fp_text user "+"
 			(at -2.5 -3.5 0)
@@ -8284,7 +8284,7 @@
 		(pad "1" thru_hole circle
 			(at 2.5 0)
 			(size 3 3)
-			(drill 2)
+			(drill 1.6)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net 2 "GND")
@@ -8295,7 +8295,7 @@
 		(pad "2" thru_hole circle
 			(at -2.5 0)
 			(size 3 3)
-			(drill 2)
+			(drill 1.6)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net 4 "Net-(J1-Pin_2)")
@@ -8457,7 +8457,7 @@
 		(width 0.2)
 		(layer "F.Cu")
 		(net 3)
-		(uuid "77822e1a-172a-4c7a-a43c-0c8424581b4d")
+		(uuid "a3f64903-6b8e-4d9f-ba90-9338926f11fb")
 	)
 	(segment
 		(start 210.152651 69.652651)
@@ -8482,6 +8482,14 @@
 		(layer "F.Cu")
 		(net 3)
 		(uuid "e003cc0e-ff96-44c6-9e90-cee6f0710855")
+	)
+	(segment
+		(start 202.7 68.5)
+		(end 209 68.5)
+		(width 0.2)
+		(layer "F.Cu")
+		(net 3)
+		(uuid "eb82c349-fe82-472f-b53a-5f8fad897a9c")
 	)
 	(segment
 		(start 151.5 88.37)
